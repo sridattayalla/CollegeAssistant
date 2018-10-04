@@ -1,0 +1,1139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--<android.support.v7.widget.Toolbar-->
+    <!---->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="40dp"-->
+    <!--android:background="#1affffff">-->
+
+    <!--</android.support.v7.widget.Toolbar>-->
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="Tick For Absentees"
+        android:textColor="#008000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/attendence_register_no_internet_image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/no_internet_icon"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/attendence_register_retry"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/attendence_register_retry"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:background="#008000"
+        android:text="Retry"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/attendence_register_no_internet_image"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/attendence_register_no_internet_image"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.581" />
+
+
+    <Button
+        android:id="@+id/post_marks_choose_section"
+        android:layout_width="131dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="47dp"
+        android:background="#ffffff"
+        android:onClick="showSectionList"
+        android:text="Choose Section  >"
+        android:textAllCaps="false"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView18"/>
+
+    <Button
+        android:id="@+id/mark_all"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="8dp"
+        android:text="mark all"
+        app:layout_constraintBottom_toBottomOf="@+id/post_marks_choose_section"
+        app:layout_constraintStart_toEndOf="@+id/post_marks_choose_section"
+        app:layout_constraintTop_toTopOf="@+id/post_marks_choose_section" />
+
+    <Button
+        android:id="@+id/clear_all"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="8dp"
+        android:text="clear all"
+        app:layout_constraintBottom_toBottomOf="@+id/post_marks_choose_section"
+        app:layout_constraintStart_toEndOf="@+id/mark_all"
+        app:layout_constraintTop_toTopOf="@+id/post_marks_choose_section"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="81dp"
+        app:layout_constraintTop_toBottomOf="@+id/post_marks_choose_section">
+
+        <android.support.v4.widget.NestedScrollView
+            android:id="@+id/nestedScrollView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="60dp"
+            android:paddingTop="14dp">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <net.igenius.customcheckbox.CustomCheckBox
+                    android:id="@+id/a_checkbox1"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/attendence_yellow_layer_shape"
+                    app:color_checked="@color/attendenceColor"
+                    app:color_tick="#ffffff"
+                    app:color_unchecked="#ffffff"
+                    app:color_unchecked_stroke="@color/cardview_shadow_start_color"
+                    app:layout_constraintEnd_toStartOf="@+id/a_checkbox2"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:small_tick="true"
+                    app:stroke_width="1dp" />
+
+                <net.igenius.customcheckbox.CustomCheckBox
+                    android:id="@+id/a_checkbox2"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/attendence_yellow_layer_shape"
+                    app:color_checked="@color/attendenceColor"
+                    app:color_tick="#ffffff"
+                    app:color_unchecked="#ffffff"
+                    app:color_unchecked_stroke="@color/cardview_shadow_start_color"
+                    app:layout_constraintBottom_toBottomOf="@+id/a_checkbox1"
+                    app:layout_constraintEnd_toStartOf="@+id/a_checkbox3"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/a_checkbox1"
+                    app:layout_constraintTop_toTopOf="@+id/a_checkbox1"
+                    app:small_tick="true"
+                    app:stroke_width="1dp" />
+
+                <net.igenius.customcheckbox.CustomCheckBox
+                    android:id="@+id/a_checkbox3"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/attendence_yellow_layer_shape"
+                    app:color_checked="#ff0000"
+                    app:color_tick="#ffffff"
+                    app:color_unchecked="#ffffff"
+                    app:color_unchecked_stroke="@color/cardview_shadow_start_color"
+                    app:layout_constraintBottom_toBottomOf="@+id/a_checkbox2"
+                    app:layout_constraintEnd_toStartOf="@+id/a_checkbox4"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/a_checkbox2"
+                    app:layout_constraintTop_toTopOf="@+id/a_checkbox2"
+                    app:small_tick="true"
+                    app:stroke_width="1dp" />
+
+                <net.igenius.customcheckbox.CustomCheckBox
+                    android:id="@+id/a_checkbox4"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/attendence_yellow_layer_shape"
+                    app:color_checked="#ff0000"
+                    app:color_tick="#ffffff"
+                    app:color_unchecked="#ffffff"
+                    app:color_unchecked_stroke="@color/cardview_shadow_start_color"
+                    app:layout_constraintBottom_toBottomOf="@+id/a_checkbox3"
+                    app:layout_constraintEnd_toStartOf="@+id/a_checkbox5"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/a_checkbox3"
+                    app:layout_constraintTop_toTopOf="@+id/a_checkbox3"
+                    app:small_tick="true"
+                    app:stroke_width="1dp" />
+
+                <net.igenius.customcheckbox.CustomCheckBox
+                    android:id="@+id/a_checkbox5"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/attendence_yellow_layer_shape"
+                    app:color_checked="#ff0000"
+                    app:color_tick="#ffffff"
+                    app:color_unchecked="#ffffff"
+                    app:color_unchecked_stroke="@color/cardview_shadow_start_color"
+                    app:layout_constraintBottom_toBottomOf="@+id/a_checkbox4"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/a_checkbox4"
+                    app:layout_constraintTop_toTopOf="@+id/a_checkbox4"
+                    app:small_tick="true"
+                    app:stroke_width="1dp" />
+
+                <net.igenius.customcheckbox.CustomCheckBox
+                    android:id="@+id/a_checkbox6"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="24dp"
+                    android:background="@drawable/attendence_blue_layer_shape"
+                    app:color_checked="#ff0000"
+                    app:color_tick="#ffffff"
+                    app:color_unchecked="#ffffff"
+                    app:color_unchecked_stroke="@color/cardview_shadow_start_color"
+                    app:layout_constraintEnd_toEndOf="@+id/a_checkbox1"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="@+id/a_checkbox1"
+                    app:layout_constraintTop_toBottomOf="@+id/a_textview1"
+                    app:small_tick="true"
+                    app:stroke_width="1dp" />
+
+                <net.igenius.customcheckbox.CustomCheckBox
+                    android:id="@+id/a_checkbox7"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/attendence_blue_layer_shape"
+                    app:color_checked="#ff0000"
+                    app:color_tick="#ffffff"
+                    app:color_unchecked="#ffffff"
+                    app:color_unchecked_stroke="@color/cardview_shadow_start_color"
+                    app:layout_constraintBottom_toBottomOf="@+id/a_checkbox6"
+                    app:layout_constraintEnd_toEndOf="@+id/a_checkbox2"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="@+id/a_checkbox2"
+                    app:layout_constraintTop_toTopOf="@+id/a_checkbox6"
+                    app:small_tick="true"
+                    app:stroke_width="1dp" />
+
+                <net.igenius.customcheckbox.CustomCheckBox
+                    android:id="@+id/a_checkbox8"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/attendence_blue_layer_shape"
+                    app:color_checked="#ff0000"
+                    app:color_tick="#ffffff"
+                    app:color_unchecked="#ffffff"
+                    app:color_unchecked_stroke="@color/cardview_shadow_start_color"
+                    app:layout_constraintBottom_toBottomOf="@+id/a_checkbox7"
+                    app:layout_constraintEnd_toEndOf="@+id/a_checkbox3"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="@+id/a_checkbox3"
+                    app:layout_constraintTop_toTopOf="@+id/a_checkbox7"
+                    app:small_tick="true"
+                    app:stroke_width="1dp" />
+
+                <net.igenius.customcheckbox.CustomCheckBox
+                    android:id="@+id/a_checkbox9"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/attendence_blue_layer_shape"
+                    app:color_checked="#ff0000"
+                    app:color_tick="#ffffff"
+                    app:color_unchecked="#ffffff"
+                    app:color_unchecked_stroke="@color/cardview_shadow_start_color"
+                    app:layout_constraintBottom_toBottomOf="@+id/a_checkbox8"
+                    app:layout_constraintEnd_toEndOf="@+id/a_checkbox4"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="@+id/a_checkbox4"
+                    app:layout_constraintTop_toTopOf="@+id/a_checkbox8"
+                    app:small_tick="true"
+                    app:stroke_width="1dp" />
+
+                <net.igenius.customcheckbox.CustomCheckBox
+                    android:id="@+id/a_checkbox10"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/attendence_blue_layer_shape"
+                    app:color_checked="#ff0000"
+                    app:color_tick="#ffffff"
+                    app:color_unchecked="#ffffff"
+                    app:color_unchecked_stroke="@color/cardview_shadow_start_color"
+                    app:layout_constraintBottom_toBottomOf="@+id/a_checkbox9"
+                    app:layout_constraintEnd_toEndOf="@+id/a_checkbox5"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="@+id/a_checkbox5"
+                    app:layout_constraintTop_toTopOf="@+id/a_checkbox9"
+                    app:small_tick="true"
+                    app:stroke_width="1dp" />
+
+                <TextView
+                    android:id="@+id/a_textview1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/roll_no_yellow_shape"
+                    android:gravity="center"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/a_checkbox1"
+                    app:layout_constraintStart_toStartOf="@+id/a_checkbox1"
+                    app:layout_constraintTop_toBottomOf="@+id/a_checkbox1" />
+
+                <TextView
+                    android:id="@+id/a_textview2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/roll_no_yellow_shape"
+                    android:gravity="center"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/a_checkbox2"
+                    app:layout_constraintStart_toStartOf="@+id/a_checkbox2"
+                    app:layout_constraintTop_toBottomOf="@+id/a_checkbox2" />
+
+                <TextView
+                    android:id="@+id/a_textview3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/roll_no_yellow_shape"
+                    android:gravity="center"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/a_checkbox3"
+                    app:layout_constraintStart_toStartOf="@+id/a_checkbox3"
+                    app:layout_constraintTop_toBottomOf="@+id/a_checkbox3" />
+
+                <TextView
+                    android:id="@+id/a_textview4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/roll_no_yellow_shape"
+                    android:gravity="center"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/a_checkbox4"
+                    app:layout_constraintStart_toStartOf="@+id/a_checkbox4"
+                    app:layout_constraintTop_toBottomOf="@+id/a_checkbox4" />
+
+                <TextView
+                    android:id="@+id/a_textview5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/roll_no_yellow_shape"
+                    android:gravity="center"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/a_checkbox5"
+                    app:layout_constraintStart_toStartOf="@+id/a_checkbox5"
+                    app:layout_constraintTop_toBottomOf="@+id/a_checkbox5" />
+
+                <TextView
+                    android:id="@+id/a_textview6"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/roll_no_yellow_shape"
+                    android:gravity="center"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/a_checkbox6"
+                    app:layout_constraintStart_toStartOf="@+id/a_checkbox6"
+                    app:layout_constraintTop_toBottomOf="@+id/a_checkbox6" />
+
+                <TextView
+                    android:id="@+id/a_textview7"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/roll_no_yellow_shape"
+                    android:gravity="center"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/a_checkbox7"
+                    app:layout_constraintStart_toStartOf="@+id/a_checkbox7"
+                    app:layout_constraintTop_toBottomOf="@+id/a_checkbox7" />
+
+                <TextView
+                    android:id="@+id/a_textview8"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/roll_no_yellow_shape"
+                    android:gravity="center"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/a_checkbox8"
+                    app:layout_constraintStart_toStartOf="@+id/a_checkbox8"
+                    app:layout_constraintTop_toBottomOf="@+id/a_checkbox8" />
+
+                <TextView
+                    android:id="@+id/a_textview9"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/roll_no_yellow_shape"
+                    android:gravity="center"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/a_checkbox9"
+                    app:layout_constraintStart_toStartOf="@+id/a_checkbox9"
+                    app:layout_constraintTop_toBottomOf="@+id/a_checkbox9" />
+
+                <TextView
+                    android:id="@+id/a_textview10"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/roll_no_yellow_shape"
+                    android:gravity="center"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/a_checkbox10"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/a_checkbox10"
+                    app:layout_constraintTop_toBottomOf="@+id/a_checkbox10" />
+
+                <net.igenius.customcheckbox.CustomCheckBox
+                    android:id="@+id/a_checkbox11"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="24dp"
+                    android:background="@drawable/attendence_yellow_layer_shape"
+                    app:color_checked="#ff0000"
+                    app:color_tick="#ffffff"
+                    app:color_unchecked="#ffffff"
+                    app:color_unchecked_stroke="@color/cardview_shadow_start_color"
+                    app:layout_constraintEnd_toEndOf="@+id/a_checkbox6"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="@+id/a_checkbox6"
+                    app:layout_constraintTop_toBottomOf="@+id/a_textview6"
+                    app:small_tick="true"
+                    app:stroke_width="1dp" />
+
+                <net.igenius.customcheckbox.CustomCheckBox
+                    android:id="@+id/a_checkbox12"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/attendence_yellow_layer_shape"
+                    app:color_checked="#ff0000"
+                    app:color_tick="#ffffff"
+                    app:color_unchecked="#ffffff"
+                    app:color_unchecked_stroke="@color/cardview_shadow_start_color"
+                    app:layout_constraintBottom_toBottomOf="@+id/a_checkbox11"
+                    app:layout_constraintEnd_toEndOf="@+id/a_checkbox7"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="@+id/a_checkbox7"
+                    app:layout_constraintTop_toTopOf="@+id/a_checkbox11"
+                    app:small_tick="true"
+                    app:stroke_width="1dp" />
+
+                <net.igenius.customcheckbox.CustomCheckBox
+                    android:id="@+id/a_checkbox13"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/attendence_yellow_layer_shape"
+                    app:color_checked="#ff0000"
+                    app:color_tick="#ffffff"
+                    app:color_unchecked="#ffffff"
+                    app:color_unchecked_stroke="@color/cardview_shadow_start_color"
+                    app:layout_constraintBottom_toBottomOf="@+id/a_checkbox12"
+                    app:layout_constraintEnd_toEndOf="@+id/a_checkbox8"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="@+id/a_checkbox8"
+                    app:layout_constraintTop_toTopOf="@+id/a_checkbox12"
+                    app:small_tick="true"
+                    app:stroke_width="1dp" />
+
+                <net.igenius.customcheckbox.CustomCheckBox
+                    android:id="@+id/a_checkbox14"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/attendence_yellow_layer_shape"
+                    app:color_checked="#ff0000"
+                    app:color_tick="#ffffff"
+                    app:color_unchecked="#ffffff"
+                    app:color_unchecked_stroke="@color/cardview_shadow_start_color"
+                    app:layout_constraintBottom_toBottomOf="@+id/a_checkbox13"
+                    app:layout_constraintEnd_toEndOf="@+id/a_checkbox9"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="@+id/a_checkbox9"
+                    app:layout_constraintTop_toTopOf="@+id/a_checkbox13"
+                    app:small_tick="true"
+                    app:stroke_width="1dp" />
+
+                <net.igenius.customcheckbox.CustomCheckBox
+                    android:id="@+id/a_checkbox15"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/attendence_yellow_layer_shape"
+                    app:color_checked="#ff0000"
+                    app:color_tick="#ffffff"
+                    app:color_unchecked="#ffffff"
+                    app:color_unchecked_stroke="@color/cardview_shadow_start_color"
+                    app:layout_constraintBottom_toBottomOf="@+id/a_checkbox14"
+                    app:layout_constraintEnd_toEndOf="@+id/a_checkbox10"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="@+id/a_checkbox10"
+                    app:layout_constraintTop_toTopOf="@+id/a_checkbox14"
+                    app:small_tick="true"
+                    app:stroke_width="1dp" />
+
+                <net.igenius.customcheckbox.CustomCheckBox
+                    android:id="@+id/a_checkbox16"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="24dp"
+                    android:background="@drawable/attendence_blue_layer_shape"
+                    app:color_checked="#ff0000"
+                    app:color_tick="#ffffff"
+                    app:color_unchecked="#ffffff"
+                    app:color_unchecked_stroke="@color/cardview_shadow_start_color"
+                    app:layout_constraintEnd_toEndOf="@+id/a_checkbox11"
+                    app:layout_constraintStart_toStartOf="@+id/a_checkbox11"
+                    app:layout_constraintTop_toBottomOf="@+id/a_textview11"
+                    app:small_tick="true"
+                    app:stroke_width="1dp" />
+
+                <net.igenius.customcheckbox.CustomCheckBox
+                    android:id="@+id/a_checkbox17"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/attendence_blue_layer_shape"
+                    app:color_checked="#ff0000"
+                    app:color_tick="#ffffff"
+                    app:color_unchecked="#ffffff"
+                    app:color_unchecked_stroke="@color/cardview_shadow_start_color"
+                    app:layout_constraintBottom_toBottomOf="@+id/a_checkbox16"
+                    app:layout_constraintEnd_toEndOf="@+id/a_checkbox12"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="@+id/a_checkbox12"
+                    app:layout_constraintTop_toTopOf="@+id/a_checkbox16"
+                    app:small_tick="true"
+                    app:stroke_width="1dp" />
+
+                <net.igenius.customcheckbox.CustomCheckBox
+                    android:id="@+id/a_checkbox18"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/attendence_blue_layer_shape"
+                    app:color_checked="#ff0000"
+                    app:color_tick="#ffffff"
+                    app:color_unchecked="#ffffff"
+                    app:color_unchecked_stroke="@color/cardview_shadow_start_color"
+                    app:layout_constraintBottom_toBottomOf="@+id/a_checkbox17"
+                    app:layout_constraintEnd_toEndOf="@+id/a_checkbox13"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="@+id/a_checkbox13"
+                    app:layout_constraintTop_toTopOf="@+id/a_checkbox17"
+                    app:small_tick="true"
+                    app:stroke_width="1dp" />
+
+                <net.igenius.customcheckbox.CustomCheckBox
+                    android:id="@+id/a_checkbox19"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/attendence_blue_layer_shape"
+                    app:color_checked="#ff0000"
+                    app:color_tick="#ffffff"
+                    app:color_unchecked="#ffffff"
+                    app:color_unchecked_stroke="@color/cardview_shadow_start_color"
+                    app:layout_constraintBottom_toBottomOf="@+id/a_checkbox18"
+                    app:layout_constraintEnd_toEndOf="@+id/a_checkbox14"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="@+id/a_checkbox14"
+                    app:layout_constraintTop_toTopOf="@+id/a_checkbox18"
+                    app:small_tick="true"
+                    app:stroke_width="1dp" />
+
+                <net.igenius.customcheckbox.CustomCheckBox
+                    android:id="@+id/a_checkbox20"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/attendence_blue_layer_shape"
+                    app:color_checked="#ff0000"
+                    app:color_tick="#ffffff"
+                    app:color_unchecked="#ffffff"
+                    app:color_unchecked_stroke="@color/cardview_shadow_start_color"
+                    app:layout_constraintBottom_toBottomOf="@+id/a_checkbox19"
+                    app:layout_constraintEnd_toEndOf="@+id/a_checkbox15"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="@+id/a_checkbox15"
+                    app:layout_constraintTop_toTopOf="@+id/a_checkbox19"
+                    app:small_tick="true"
+                    app:stroke_width="1dp" />
+
+                <net.igenius.customcheckbox.CustomCheckBox
+                    android:id="@+id/a_checkbox21"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="24dp"
+                    android:background="@drawable/attendence_yellow_layer_shape"
+                    app:color_checked="#ff0000"
+                    app:color_tick="#ffffff"
+                    app:color_unchecked="#ffffff"
+                    app:color_unchecked_stroke="@color/cardview_shadow_start_color"
+                    app:layout_constraintEnd_toEndOf="@+id/a_checkbox16"
+                    app:layout_constraintStart_toStartOf="@+id/a_checkbox16"
+                    app:layout_constraintTop_toBottomOf="@+id/a_textview16"
+                    app:small_tick="true"
+                    app:stroke_width="1dp" />
+
+                <net.igenius.customcheckbox.CustomCheckBox
+                    android:id="@+id/a_checkbox22"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/attendence_yellow_layer_shape"
+                    app:color_checked="#ff0000"
+                    app:color_tick="#ffffff"
+                    app:color_unchecked="#ffffff"
+                    app:color_unchecked_stroke="@color/cardview_shadow_start_color"
+                    app:layout_constraintBottom_toBottomOf="@+id/a_checkbox21"
+                    app:layout_constraintEnd_toEndOf="@+id/a_checkbox17"
+                    app:layout_constraintStart_toStartOf="@+id/a_checkbox17"
+                    app:layout_constraintTop_toTopOf="@+id/a_checkbox21"
+                    app:small_tick="true"
+                    app:stroke_width="1dp" />
+
+                <TextView
+                    android:id="@+id/a_textview11"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/roll_no_yellow_shape"
+                    android:gravity="center"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/a_checkbox11"
+                    app:layout_constraintStart_toStartOf="@+id/a_checkbox11"
+                    app:layout_constraintTop_toBottomOf="@+id/a_checkbox11" />
+
+                <TextView
+                    android:id="@+id/a_textview12"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/roll_no_yellow_shape"
+                    android:gravity="center"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/a_checkbox12"
+                    app:layout_constraintStart_toStartOf="@+id/a_checkbox12"
+                    app:layout_constraintTop_toBottomOf="@+id/a_checkbox12" />
+
+                <TextView
+                    android:id="@+id/a_textview13"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/roll_no_yellow_shape"
+                    android:gravity="center"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/a_checkbox13"
+                    app:layout_constraintStart_toStartOf="@+id/a_checkbox13"
+                    app:layout_constraintTop_toBottomOf="@+id/a_checkbox13" />
+
+                <TextView
+                    android:id="@+id/a_textview14"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/roll_no_yellow_shape"
+                    android:gravity="center"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/a_checkbox14"
+                    app:layout_constraintStart_toStartOf="@+id/a_checkbox14"
+                    app:layout_constraintTop_toBottomOf="@+id/a_checkbox14" />
+
+                <TextView
+                    android:id="@+id/a_textview15"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/roll_no_yellow_shape"
+                    android:gravity="center"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/a_checkbox15"
+                    app:layout_constraintStart_toStartOf="@+id/a_checkbox15"
+                    app:layout_constraintTop_toBottomOf="@+id/a_checkbox15" />
+
+                <TextView
+                    android:id="@+id/a_textview16"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/roll_no_yellow_shape"
+                    android:gravity="center"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/a_checkbox16"
+                    app:layout_constraintStart_toStartOf="@+id/a_checkbox16"
+                    app:layout_constraintTop_toBottomOf="@+id/a_checkbox16" />
+
+                <TextView
+                    android:id="@+id/a_textview17"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/roll_no_yellow_shape"
+                    android:gravity="center"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/a_checkbox17"
+                    app:layout_constraintStart_toStartOf="@+id/a_checkbox17"
+                    app:layout_constraintTop_toBottomOf="@+id/a_checkbox17" />
+
+                <TextView
+                    android:id="@+id/a_textview18"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/roll_no_yellow_shape"
+                    android:gravity="center"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/a_checkbox18"
+                    app:layout_constraintStart_toStartOf="@+id/a_checkbox18"
+                    app:layout_constraintTop_toBottomOf="@+id/a_checkbox18" />
+
+                <TextView
+                    android:id="@+id/a_textview19"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/roll_no_yellow_shape"
+                    android:gravity="center"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/a_checkbox19"
+                    app:layout_constraintStart_toStartOf="@+id/a_checkbox19"
+                    app:layout_constraintTop_toBottomOf="@+id/a_checkbox19" />
+
+                <TextView
+                    android:id="@+id/a_textview20"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/roll_no_yellow_shape"
+                    android:gravity="center"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/a_checkbox20"
+                    app:layout_constraintStart_toStartOf="@+id/a_checkbox20"
+                    app:layout_constraintTop_toBottomOf="@+id/a_checkbox20" />
+
+                <TextView
+                    android:id="@+id/a_textview21"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/roll_no_yellow_shape"
+                    android:gravity="center"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/a_checkbox21"
+                    app:layout_constraintStart_toStartOf="@+id/a_checkbox21"
+                    app:layout_constraintTop_toBottomOf="@+id/a_checkbox21" />
+
+                <TextView
+                    android:id="@+id/a_textview22"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/roll_no_yellow_shape"
+                    android:gravity="center"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/a_checkbox22"
+                    app:layout_constraintStart_toStartOf="@+id/a_checkbox22"
+                    app:layout_constraintTop_toBottomOf="@+id/a_checkbox22" />
+
+                <net.igenius.customcheckbox.CustomCheckBox
+                    android:id="@+id/a_checkbox23"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/attendence_yellow_layer_shape"
+                    app:color_checked="#ff0000"
+                    app:color_tick="#ffffff"
+                    app:color_unchecked="#ffffff"
+                    app:color_unchecked_stroke="@color/cardview_shadow_start_color"
+                    app:layout_constraintBottom_toTopOf="@+id/a_textview22"
+                    app:layout_constraintEnd_toEndOf="@+id/a_checkbox18"
+                    app:layout_constraintStart_toStartOf="@+id/a_checkbox18"
+                    app:layout_constraintTop_toTopOf="@+id/a_checkbox22"
+                    app:small_tick="true"
+                    app:stroke_width="1dp" />
+
+                <net.igenius.customcheckbox.CustomCheckBox
+                    android:id="@+id/a_checkbox24"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/attendence_yellow_layer_shape"
+                    app:color_checked="#ff0000"
+                    app:color_tick="#ffffff"
+                    app:color_unchecked="#ffffff"
+                    app:color_unchecked_stroke="@color/cardview_shadow_start_color"
+                    app:layout_constraintBottom_toTopOf="@+id/a_textview23"
+                    app:layout_constraintEnd_toEndOf="@+id/a_checkbox19"
+                    app:layout_constraintStart_toStartOf="@+id/a_checkbox19"
+                    app:layout_constraintTop_toTopOf="@+id/a_checkbox23"
+                    app:small_tick="true"
+                    app:stroke_width="1dp" />
+
+                <net.igenius.customcheckbox.CustomCheckBox
+                    android:id="@+id/a_checkbox25"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/attendence_yellow_layer_shape"
+                    app:color_checked="#ff0000"
+                    app:color_tick="#ffffff"
+                    app:color_unchecked="#ffffff"
+                    app:color_unchecked_stroke="@color/cardview_shadow_start_color"
+                    app:layout_constraintBottom_toTopOf="@+id/a_textview24"
+                    app:layout_constraintEnd_toEndOf="@+id/a_checkbox20"
+                    app:layout_constraintStart_toStartOf="@+id/a_checkbox20"
+                    app:layout_constraintTop_toTopOf="@+id/a_checkbox24"
+                    app:small_tick="true"
+                    app:stroke_width="1dp" />
+
+                <net.igenius.customcheckbox.CustomCheckBox
+                    android:id="@+id/a_checkbox26"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="24dp"
+                    android:background="@drawable/attendence_blue_layer_shape"
+                    app:color_checked="#ff0000"
+                    app:color_tick="#ffffff"
+                    app:color_unchecked="#ffffff"
+                    app:color_unchecked_stroke="@color/cardview_shadow_start_color"
+                    app:layout_constraintEnd_toEndOf="@+id/a_checkbox21"
+                    app:layout_constraintStart_toStartOf="@+id/a_checkbox21"
+                    app:layout_constraintTop_toBottomOf="@+id/a_textview21"
+                    app:small_tick="true"
+                    app:stroke_width="1dp" />
+
+                <net.igenius.customcheckbox.CustomCheckBox
+                    android:id="@+id/a_checkbox27"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="24dp"
+                    android:background="@drawable/attendence_blue_layer_shape"
+                    app:color_checked="#ff0000"
+                    app:color_tick="#ffffff"
+                    app:color_unchecked="#ffffff"
+                    app:color_unchecked_stroke="@color/cardview_shadow_start_color"
+                    app:layout_constraintEnd_toEndOf="@+id/a_checkbox22"
+                    app:layout_constraintStart_toStartOf="@+id/a_checkbox22"
+                    app:layout_constraintTop_toBottomOf="@+id/a_textview22"
+                    app:small_tick="true"
+                    app:stroke_width="1dp" />
+
+                <net.igenius.customcheckbox.CustomCheckBox
+                    android:id="@+id/a_checkbox28"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="24dp"
+                    android:background="@drawable/attendence_blue_layer_shape"
+                    app:color_checked="#ff0000"
+                    app:color_tick="#ffffff"
+                    app:color_unchecked="#ffffff"
+                    app:color_unchecked_stroke="@color/cardview_shadow_start_color"
+                    app:layout_constraintEnd_toEndOf="@+id/a_checkbox23"
+                    app:layout_constraintStart_toStartOf="@+id/a_checkbox23"
+                    app:layout_constraintTop_toBottomOf="@+id/a_textview23"
+                    app:small_tick="true"
+                    app:stroke_width="1dp" />
+
+                <net.igenius.customcheckbox.CustomCheckBox
+                    android:id="@+id/a_checkbox29"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="24dp"
+                    android:background="@drawable/attendence_blue_layer_shape"
+                    app:color_checked="#ff0000"
+                    app:color_tick="#ffffff"
+                    app:color_unchecked="#ffffff"
+                    app:color_unchecked_stroke="@color/cardview_shadow_start_color"
+                    app:layout_constraintEnd_toEndOf="@+id/a_checkbox24"
+                    app:layout_constraintStart_toStartOf="@+id/a_checkbox24"
+                    app:layout_constraintTop_toBottomOf="@+id/a_textview24"
+                    app:small_tick="true"
+                    app:stroke_width="1dp" />
+
+                <net.igenius.customcheckbox.CustomCheckBox
+                    android:id="@+id/a_checkbox30"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="24dp"
+                    android:background="@drawable/attendence_blue_layer_shape"
+                    app:color_checked="#ff0000"
+                    app:color_tick="#ffffff"
+                    app:color_unchecked="#ffffff"
+                    app:color_unchecked_stroke="@color/cardview_shadow_start_color"
+                    app:layout_constraintEnd_toEndOf="@+id/a_checkbox25"
+                    app:layout_constraintStart_toStartOf="@+id/a_checkbox25"
+                    app:layout_constraintTop_toBottomOf="@+id/a_textview25"
+                    app:small_tick="true"
+                    app:stroke_width="1dp" />
+
+                <net.igenius.customcheckbox.CustomCheckBox
+                    android:id="@+id/a_checkbox31"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="24dp"
+                    android:background="@drawable/attendence_yellow_layer_shape"
+                    app:color_checked="#ff0000"
+                    app:color_tick="#ffffff"
+                    app:color_unchecked="#ffffff"
+                    app:color_unchecked_stroke="@color/cardview_shadow_start_color"
+                    app:layout_constraintEnd_toEndOf="@+id/a_checkbox26"
+                    app:layout_constraintStart_toStartOf="@+id/a_checkbox21"
+                    app:layout_constraintTop_toBottomOf="@+id/a_textview26"
+                    app:small_tick="true"
+                    app:stroke_width="1dp" />
+
+                <TextView
+                    android:id="@+id/a_textview23"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/roll_no_yellow_shape"
+                    android:gravity="center"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/a_checkbox23"
+                    app:layout_constraintStart_toStartOf="@+id/a_checkbox23"
+                    app:layout_constraintTop_toBottomOf="@+id/a_checkbox23" />
+
+                <TextView
+                    android:id="@+id/a_textview24"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/roll_no_yellow_shape"
+                    android:gravity="center"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/a_checkbox24"
+                    app:layout_constraintStart_toStartOf="@+id/a_checkbox24"
+                    app:layout_constraintTop_toBottomOf="@+id/a_checkbox24" />
+
+                <TextView
+                    android:id="@+id/a_textview25"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/roll_no_yellow_shape"
+                    android:gravity="center"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/a_checkbox25"
+                    app:layout_constraintStart_toStartOf="@+id/a_checkbox25"
+                    app:layout_constraintTop_toBottomOf="@+id/a_checkbox25" />
+
+                <TextView
+                    android:id="@+id/a_textview26"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/roll_no_yellow_shape"
+                    android:gravity="center"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/a_checkbox26"
+                    app:layout_constraintStart_toStartOf="@+id/a_checkbox26"
+                    app:layout_constraintTop_toBottomOf="@+id/a_checkbox26" />
+
+                <TextView
+                    android:id="@+id/a_textview27"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/roll_no_yellow_shape"
+                    android:gravity="center"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/a_checkbox27"
+                    app:layout_constraintStart_toStartOf="@+id/a_checkbox27"
+                    app:layout_constraintTop_toBottomOf="@+id/a_checkbox27" />
+
+                <TextView
+                    android:id="@+id/a_textview28"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/roll_no_yellow_shape"
+                    android:gravity="center"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/a_checkbox28"
+                    app:layout_constraintStart_toStartOf="@+id/a_checkbox28"
+                    app:layout_constraintTop_toBottomOf="@+id/a_checkbox28" />
+
+                <TextView
+                    android:id="@+id/a_textview29"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/roll_no_yellow_shape"
+                    android:gravity="center"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/a_checkbox29"
+                    app:layout_constraintStart_toStartOf="@+id/a_checkbox29"
+                    app:layout_constraintTop_toBottomOf="@+id/a_checkbox29" />
+
+                <TextView
+                    android:id="@+id/a_textview30"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/roll_no_yellow_shape"
+                    android:gravity="center"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/a_checkbox30"
+                    app:layout_constraintStart_toStartOf="@+id/a_checkbox30"
+                    app:layout_constraintTop_toBottomOf="@+id/a_checkbox30" />
+
+                <TextView
+                    android:id="@+id/a_textview31"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/roll_no_yellow_shape"
+                    android:gravity="center"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/a_checkbox31"
+                    app:layout_constraintStart_toStartOf="@+id/a_checkbox31"
+                    app:layout_constraintTop_toBottomOf="@+id/a_checkbox31" />
+
+                <TextView
+                    android:id="@+id/faculty_attendence_internet_error"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="244dp"
+                    android:gravity="center"
+                    android:text="Can't connect Internet"
+                    android:textSize="18sp"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/faculty_attendence_retry"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="Retry"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/faculty_attendence_internet_error" />
+
+
+            </android.support.constraint.ConstraintLayout>
+        </android.support.v4.widget.NestedScrollView>
+
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/attendence_register_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:background="@color/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:title="Attendence Register"></android.support.v7.widget.Toolbar>
+
+
+    </RelativeLayout>
+
+    <com.wang.avi.AVLoadingIndicatorView
+        android:id="@+id/faculty_attendence_subjects_loader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:indicatorColor="@color/colorPrimary"
+        app:indicatorName="BallPulseIndicator"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.wang.avi.AVLoadingIndicatorView
+        android:id="@+id/faculty_attendence_loader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:indicatorColor="@color/colorPrimary"
+        app:indicatorName="BallPulseIndicator"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/attendence_loading_text"
+        android:layout_width="wrap_content"
+        android:layout_height="15dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:text="Posting..."
+        android:textColor="@color/colorPrimary"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/faculty_attendence_submission_loader" />
+
+    <com.wang.avi.AVLoadingIndicatorView
+        android:id="@+id/faculty_attendence_submission_loader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:indicatorColor="@color/colorPrimary"
+        app:indicatorName="SemiCircleSpinIndicator"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <!--<ProgressBar-->
+    <!--android:id="@+id/faculty_attendance_upload_progressbar"-->
+    <!--style="?android:attr/progressBarStyleHorizontal"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="6dp"-->
+    <!--android:layout_marginEnd="8dp"-->
+    <!--android:layout_marginStart="8dp"-->
+    <!--app:layout_constraintEnd_toEndOf="parent"-->
+    <!--app:layout_constraintHorizontal_bias="0.518"-->
+    <!--app:layout_constraintStart_toStartOf="parent"-->
+    <!--app:layout_constraintTop_toBottomOf="@+id/attendence_top_text" />-->
+
+
+</android.support.constraint.ConstraintLayout>

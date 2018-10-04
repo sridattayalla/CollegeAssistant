@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/student_attendence_no_internet_image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:src="@drawable/no_internet_icon"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/student_attendence_retry"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/student_attendence_retry"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="108dp"
+        android:text="Retry"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/student_attendence_no_internet_image"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/student_attendence_no_internet_image"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.wang.avi.AVLoadingIndicatorView
+        android:id="@+id/student_attendence_loader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:indicatorColor="@color/colorPrimary"
+        app:indicatorName="BallPulseIndicator"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/nestedScrollView5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.github.mikephil.charting.charts.PieChart
+                android:id="@+id/attendence_pi_chart"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"></com.github.mikephil.charting.charts.PieChart>
+
+            <TextView
+                android:id="@+id/subject"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="8dp"
+                android:background="@color/colorPrimary"
+                android:text="Subject"
+                android:textSize="20dp"
+                android:textColor="#ffffff"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toStartOf="@+id/present"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/attendence_pi_chart" />
+
+            <TextView
+                android:id="@+id/present"
+                android:layout_width="56dp"
+                android:layout_height="30dp"
+                android:background="@color/colorPrimary"
+                android:text=" Pre "
+                android:textSize="20dp"
+                android:textColor="#ffffff"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toStartOf="@+id/absent"
+                app:layout_constraintTop_toBottomOf="@+id/attendence_pi_chart" />
+
+            <TextView
+                android:id="@+id/absent"
+                android:layout_width="56dp"
+                android:layout_height="30dp"
+                android:background="@color/colorPrimary"
+                android:text=" Abs "
+                android:textSize="20dp"
+                android:textColor="#ffffff"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toStartOf="@+id/attendence_percentage"
+                app:layout_constraintTop_toBottomOf="@+id/attendence_pi_chart" />
+
+            <TextView
+                android:id="@+id/attendence_percentage"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginEnd="8dp"
+                android:background="@color/colorPrimary"
+                android:text="   %   "
+                android:textSize="20dp"
+                android:textColor="#ffffff"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/attendence_pi_chart" />
+
+            <TextView
+                android:id="@+id/subject_one"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:maxLines="3"
+                android:scrollHorizontally="false"
+                android:text="subject one"
+                android:textSize="20dp"
+                android:visibility="invisible"
+                android:textColor="#000000"
+                app:layout_constraintEnd_toEndOf="@+id/subject"
+                app:layout_constraintStart_toStartOf="@+id/subject"
+                app:layout_constraintTop_toBottomOf="@+id/subject" />
+
+            <TextView
+                android:id="@+id/present_one"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:paddingLeft="3dp"
+                android:text=" Present "
+                android:textSize="20dp"
+                android:textColor="#000000"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@+id/subject_one"
+                app:layout_constraintEnd_toStartOf="@+id/absent"
+                app:layout_constraintStart_toStartOf="@+id/present"
+                app:layout_constraintTop_toTopOf="@+id/subject_one" />
+
+            <TextView
+                android:id="@+id/absent_one"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:paddingLeft="3dp"
+                android:text=" Absent "
+                android:textSize="20dp"
+                android:visibility="invisible"
+                android:textColor="#000000"
+                app:layout_constraintBottom_toBottomOf="@+id/subject_one"
+                app:layout_constraintEnd_toStartOf="@+id/attendence_percentage"
+                app:layout_constraintStart_toStartOf="@+id/absent"
+                app:layout_constraintTop_toTopOf="@+id/subject_one" />
+
+            <TextView
+                android:id="@+id/attendence_percentage_one"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:paddingLeft="3dp"
+                android:text=" Percentage "
+                android:textSize="20dp"
+                android:visibility="invisible"
+                android:textColor="#000000"
+                app:layout_constraintBottom_toBottomOf="@+id/subject_one"
+                app:layout_constraintEnd_toEndOf="@+id/attendence_percentage"
+                app:layout_constraintStart_toStartOf="@+id/attendence_percentage"
+                app:layout_constraintTop_toTopOf="@+id/subject_one" />
+
+            <TextView
+                android:id="@+id/subject_two"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@color/cardview_shadow_start_color"
+                android:maxLines="3"
+                android:scrollHorizontally="false"
+                android:text="subject two"
+                android:textSize="20dp"
+                android:visibility="invisible"
+                android:textColor="#000000"
+                app:layout_constraintEnd_toEndOf="@+id/subject_one"
+                app:layout_constraintStart_toStartOf="@+id/subject_one"
+                app:layout_constraintTop_toBottomOf="@+id/subject_one" />
+
+            <TextView
+                android:id="@+id/present_two"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@color/cardview_shadow_start_color"
+                android:paddingLeft="3dp"
+                android:text=" Present "
+                android:textSize="20dp"
+                android:visibility="invisible"
+                android:textColor="#000000"
+                app:layout_constraintBottom_toBottomOf="@+id/subject_two"
+                app:layout_constraintEnd_toStartOf="@+id/absent_one"
+                app:layout_constraintStart_toStartOf="@+id/present_one"
+                app:layout_constraintTop_toTopOf="@+id/subject_two" />
+
+            <TextView
+                android:id="@+id/absent_two"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@color/cardview_shadow_start_color"
+                android:paddingLeft="3dp"
+                android:text=" Absent "
+                android:textSize="20dp"
+                android:textColor="#000000"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@+id/subject_two"
+                app:layout_constraintEnd_toStartOf="@+id/attendence_percentage_one"
+                app:layout_constraintStart_toStartOf="@+id/absent_one"
+                app:layout_constraintTop_toTopOf="@+id/subject_two" />
+
+            <TextView
+                android:id="@+id/attendence_percentage_two"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@color/cardview_shadow_start_color"
+                android:paddingLeft="3dp"
+                android:text=" Percentage "
+                android:textSize="20dp"
+                android:textColor="#000000"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@+id/subject_two"
+                app:layout_constraintEnd_toEndOf="@+id/attendence_percentage_one"
+                app:layout_constraintStart_toStartOf="@+id/attendence_percentage_one"
+                app:layout_constraintTop_toTopOf="@+id/subject_two" />
+
+            <TextView
+                android:id="@+id/subject_three"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:maxLines="3"
+                android:scrollHorizontally="false"
+                android:text="subject three"
+                android:textSize="20dp"
+                android:visibility="invisible"
+                android:textColor="#000000"
+                app:layout_constraintEnd_toEndOf="@+id/subject_two"
+                app:layout_constraintStart_toStartOf="@+id/subject_two"
+                app:layout_constraintTop_toBottomOf="@+id/subject_two" />
+
+            <TextView
+                android:id="@+id/present_three"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:paddingLeft="3dp"
+                android:text=" Present "
+                android:textSize="20dp"
+                android:textColor="#000000"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@+id/subject_three"
+                app:layout_constraintEnd_toStartOf="@+id/absent_two"
+                app:layout_constraintStart_toStartOf="@+id/present_two"
+                app:layout_constraintTop_toTopOf="@+id/subject_three" />
+
+            <TextView
+                android:id="@+id/absent_three"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:paddingLeft="3dp"
+                android:text=" Absent "
+                android:textSize="20dp"
+                android:textColor="#000000"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@+id/subject_three"
+                app:layout_constraintEnd_toStartOf="@+id/attendence_percentage_two"
+                app:layout_constraintStart_toStartOf="@+id/absent_two"
+                app:layout_constraintTop_toTopOf="@+id/subject_three" />
+
+            <TextView
+                android:id="@+id/attendence_percentage_three"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:paddingLeft="3dp"
+                android:text=" Percentage "
+                android:textSize="20dp"
+                android:textColor="#000000"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@+id/subject_three"
+                app:layout_constraintEnd_toEndOf="@+id/attendence_percentage_two"
+                app:layout_constraintStart_toStartOf="@+id/attendence_percentage_two"
+                app:layout_constraintTop_toTopOf="@+id/subject_three" />
+
+            <TextView
+                android:id="@+id/subject_four"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@color/cardview_shadow_start_color"
+                android:maxLines="3"
+                android:scrollHorizontally="false"
+                android:text="subject four"
+                android:textSize="20dp"
+                android:textColor="#000000"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="@+id/subject_three"
+                app:layout_constraintStart_toStartOf="@+id/subject_three"
+                app:layout_constraintTop_toBottomOf="@+id/subject_three" />
+
+            <TextView
+                android:id="@+id/present_four"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@color/cardview_shadow_start_color"
+                android:paddingLeft="3dp"
+                android:text=" Present "
+                android:textSize="20dp"
+                android:textColor="#000000"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@+id/subject_four"
+                app:layout_constraintEnd_toStartOf="@+id/absent_three"
+                app:layout_constraintStart_toStartOf="@+id/present_three"
+                app:layout_constraintTop_toTopOf="@+id/subject_four" />
+
+            <TextView
+                android:id="@+id/absent_four"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@color/cardview_shadow_start_color"
+                android:paddingLeft="3dp"
+                android:text=" Absent "
+                android:textSize="20dp"
+                android:textColor="#000000"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@+id/subject_four"
+                app:layout_constraintEnd_toStartOf="@+id/attendence_percentage_three"
+                app:layout_constraintStart_toStartOf="@+id/absent_three"
+                app:layout_constraintTop_toTopOf="@+id/subject_four" />
+
+            <TextView
+                android:id="@+id/attendence_percentage_four"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@color/cardview_shadow_start_color"
+                android:paddingLeft="3dp"
+                android:text=" Percentage "
+                android:textSize="20dp"
+                android:textColor="#000000"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@+id/subject_four"
+                app:layout_constraintEnd_toEndOf="@+id/attendence_percentage_three"
+                app:layout_constraintStart_toStartOf="@+id/attendence_percentage_three"
+                app:layout_constraintTop_toTopOf="@+id/subject_four" />
+
+            <TextView
+                android:id="@+id/subject_five"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:maxLines="3"
+                android:scrollHorizontally="false"
+                android:text="subject five"
+                android:textSize="20dp"
+                android:textColor="#000000"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="@+id/subject_four"
+                app:layout_constraintStart_toStartOf="@+id/subject_four"
+                app:layout_constraintTop_toBottomOf="@+id/subject_four" />
+
+            <TextView
+                android:id="@+id/present_five"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:paddingLeft="3dp"
+                android:text=" Present "
+                android:textSize="20dp"
+                android:visibility="invisible"
+                android:textColor="#000000"
+                app:layout_constraintBottom_toBottomOf="@+id/subject_five"
+                app:layout_constraintEnd_toStartOf="@+id/absent_four"
+                app:layout_constraintStart_toStartOf="@+id/present_four"
+                app:layout_constraintTop_toTopOf="@+id/subject_five" />
+
+            <TextView
+                android:id="@+id/absent_five"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:paddingLeft="3dp"
+                android:text=" Absent "
+                android:textSize="20dp"
+                android:visibility="invisible"
+                android:textColor="#000000"
+                app:layout_constraintBottom_toBottomOf="@+id/subject_five"
+                app:layout_constraintEnd_toStartOf="@+id/attendence_percentage_four"
+                app:layout_constraintStart_toStartOf="@+id/absent_four"
+                app:layout_constraintTop_toTopOf="@+id/subject_five" />
+
+            <TextView
+                android:id="@+id/attendence_percentage_five"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:paddingLeft="3dp"
+                android:text=" Percentage "
+                android:textSize="20dp"
+                android:visibility="invisible"
+                android:textColor="#000000"
+                app:layout_constraintBottom_toBottomOf="@+id/subject_five"
+                app:layout_constraintEnd_toEndOf="@+id/attendence_percentage_four"
+                app:layout_constraintStart_toStartOf="@+id/attendence_percentage_four"
+                app:layout_constraintTop_toTopOf="@+id/subject_five" />
+
+            <TextView
+                android:id="@+id/subject_six"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@color/cardview_shadow_start_color"
+                android:maxLines="3"
+                android:scrollHorizontally="false"
+                android:text="subject six"
+                android:textSize="20dp"
+                android:textColor="#000000"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="@+id/subject_five"
+                app:layout_constraintStart_toStartOf="@+id/subject_five"
+                app:layout_constraintTop_toBottomOf="@+id/subject_five" />
+
+            <TextView
+                android:id="@+id/present_six"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@color/cardview_shadow_start_color"
+                android:paddingLeft="3dp"
+                android:text=" Present "
+                android:textSize="20dp"
+                android:visibility="invisible"
+                android:textColor="#000000"
+                app:layout_constraintBottom_toBottomOf="@+id/subject_six"
+                app:layout_constraintEnd_toStartOf="@+id/absent_five"
+                app:layout_constraintStart_toStartOf="@+id/present_five"
+                app:layout_constraintTop_toTopOf="@+id/subject_six" />
+
+            <TextView
+                android:id="@+id/absent_six"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@color/cardview_shadow_start_color"
+                android:paddingLeft="3dp"
+                android:text=" Absent "
+                android:textSize="20dp"
+                android:visibility="invisible"
+                android:textColor="#000000"
+                app:layout_constraintBottom_toBottomOf="@+id/subject_six"
+                app:layout_constraintEnd_toStartOf="@+id/attendence_percentage_five"
+                app:layout_constraintStart_toStartOf="@+id/absent_five"
+                app:layout_constraintTop_toTopOf="@+id/subject_six" />
+
+            <TextView
+                android:id="@+id/attendence_percentage_six"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@color/cardview_shadow_start_color"
+                android:paddingLeft="3dp"
+                android:text=" Percentage "
+                android:textSize="20dp"
+                android:visibility="invisible"
+                android:textColor="#000000"
+                app:layout_constraintBottom_toBottomOf="@+id/subject_six"
+                app:layout_constraintEnd_toEndOf="@+id/attendence_percentage_five"
+                app:layout_constraintStart_toStartOf="@+id/attendence_percentage_five"
+                app:layout_constraintTop_toTopOf="@+id/subject_six" />
+        </android.support.constraint.ConstraintLayout>
+
+
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.constraint.ConstraintLayout>

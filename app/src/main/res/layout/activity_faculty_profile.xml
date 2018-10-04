@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.stepCone.sridatta.CollegeAssistant.faculty.FacultyProfile">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/faculty_profile_toolbar"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/colorPrimary"
+        android:titleTextColor="#ffffff"
+        app:title="Profile"></android.support.v7.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/faculty_profile_loading_text"
+        android:layout_width="wrap_content"
+        android:layout_height="15dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:text="Changing..."
+        android:textColor="@color/colorPrimary"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/faculty_profile_submission_loader" />
+
+    <com.wang.avi.AVLoadingIndicatorView
+        android:id="@+id/faculty_profile_submission_loader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:indicatorColor="@color/colorPrimary"
+        app:indicatorName="SemiCircleSpinIndicator"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/faculty_profile_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/faculty_profile_toolbar">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_faculty_image"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="40dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/add_subject"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="add subject"
+                android:textColor="#008000"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/faculty_designation" />
+
+            <TextView
+                android:id="@+id/faculty_change_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="35dp"
+                android:text="Change Password"
+                android:textColor="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:paddingBottom="13dp"
+                app:layout_constraintTop_toTopOf="@+id/faculty_designation" />
+
+            <EditText
+                android:id="@+id/add_sub_sec"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/set_password_shape"
+                android:ems="10"
+                android:hint="Old password"
+                android:inputType="textPersonName"
+                android:visibility="gone"
+                android:layout_marginTop="4dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/add_subject" />
+
+
+            <EditText
+                android:id="@+id/add_sub_sub"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:hint="New Password"
+                android:inputType="textPersonName"
+                android:visibility="gone"
+                android:background="@drawable/set_password_shape"
+                app:layout_constraintStart_toStartOf="@+id/add_sub_sec"
+                app:layout_constraintTop_toBottomOf="@+id/add_sub_sec" />
+
+
+            <EditText
+                android:id="@+id/profile_faculty_confirm_password"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:hint="Confirm New Password"
+                android:inputType="textPersonName"
+                android:visibility="gone"
+                android:background="@drawable/set_password_shape"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/add_sub_sub"
+                app:layout_constraintTop_toBottomOf="@+id/add_sub_sub" />
+
+
+            <TextView
+                android:id="@+id/profile_faculty_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="TextView"
+                android:textSize="30sp"
+                android:textColor="#000000"
+                app:layout_constraintEnd_toEndOf="@+id/profile_faculty_image"
+                app:layout_constraintStart_toStartOf="@+id/profile_faculty_image"
+                app:layout_constraintTop_toBottomOf="@+id/profile_faculty_image" />
+
+            <TextView
+                android:id="@+id/profile_faculty_jntuno"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="TextView"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@+id/profile_faculty_name"
+                app:layout_constraintStart_toStartOf="@+id/profile_faculty_name"
+                app:layout_constraintTop_toBottomOf="@+id/profile_faculty_name" />
+
+            <Button
+                android:id="@+id/save_faculty_details"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="4dp"
+                android:text="Save"
+                android:visibility="gone"
+                android:textColor="#ffffff"
+                android:background="@color/colorPrimary"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+            <Button
+                android:id="@+id/faculty_profile_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginBottom="8dp"
+                android:text="cancel"
+                android:visibility="gone"
+                android:background="#008000"
+                android:textColor="#ffffff"
+                app:layout_constraintBottom_toTopOf="@+id/save_faculty_details"
+                app:layout_constraintEnd_toEndOf="@+id/save_faculty_details"
+                app:layout_constraintStart_toStartOf="@+id/save_faculty_details" />
+
+            <TextView
+                android:id="@+id/faculty_designation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="TextView"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@+id/profile_faculty_name"
+                app:layout_constraintStart_toStartOf="@+id/profile_faculty_name"
+                app:layout_constraintTop_toBottomOf="@+id/profile_faculty_jntuno" />
+
+
+
+
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.CardView>
+</android.support.constraint.ConstraintLayout>

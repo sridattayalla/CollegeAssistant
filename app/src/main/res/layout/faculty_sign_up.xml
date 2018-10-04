@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:layout_editor_absoluteY="25dp"
+    android:background="@drawable/signinshape">
+
+    <EditText
+        android:id="@+id/faculty_signup_id"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/edittextshape"
+        android:ems="10"
+        android:hint=" id"
+        android:textSize="18dp"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--<EditText
+        android:id="@+id/faculty_signup_password"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/edittextshape"
+        android:ems="10"
+        android:textSize="18dp"
+        android:hint="password"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="@+id/faculty_signup_id"
+        app:layout_constraintStart_toStartOf="@+id/faculty_signup_id"
+        app:layout_constraintTop_toBottomOf="@+id/faculty_signup_id" />-->
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/faculty_signup_password"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:passwordToggleEnabled="true"
+        android:background="@color/transperent"
+        android:layout_marginTop="12dp"
+        app:hintEnabled="false"
+        app:layout_constraintEnd_toEndOf="@+id/faculty_signup_id"
+        app:layout_constraintStart_toStartOf="@+id/faculty_signup_id"
+        app:layout_constraintTop_toBottomOf="@+id/faculty_signup_id" >
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/etfaculty_signup_password"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/edittextshape"
+            android:hint="password"
+            android:layout_marginTop="0dp"
+            android:inputType="textPassword" />
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:id="@+id/faculty_signup"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/orange_otp_button"
+        android:text="Sign Up"
+        android:textSize="20dp"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="@+id/faculty_mobile_number"
+        app:layout_constraintStart_toStartOf="@+id/faculty_mobile_number"
+        app:layout_constraintTop_toBottomOf="@+id/faculty_mobile_number" />
+
+    <!--<EditText
+        android:id="@+id/confirm_faculty_password"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/edittextshape"
+        android:ems="10"
+        android:textSize="18dp"
+        android:hint="confirm password"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="@+id/faculty_signup_password"
+        app:layout_constraintStart_toStartOf="@+id/faculty_signup_password"
+        app:layout_constraintTop_toBottomOf="@+id/faculty_signup_password" />-->
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/confirm_faculty_password"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:passwordToggleEnabled="true"
+        android:background="@color/transperent"
+        android:layout_marginTop="12dp"
+        app:hintEnabled="false"
+        app:layout_constraintEnd_toEndOf="@+id/faculty_signup_password"
+        app:layout_constraintStart_toStartOf="@+id/faculty_signup_password"
+        app:layout_constraintTop_toBottomOf="@+id/faculty_signup_password" >
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/etconfirm_faculty_password"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/edittextshape"
+            android:hint="confirm password"
+            android:layout_marginTop="0dp"
+            android:inputType="textPassword" />
+    </android.support.design.widget.TextInputLayout>
+
+    <EditText
+        android:id="@+id/faculty_mobile_number"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/edittextshape"
+        android:ems="10"
+        android:textSize="18dp"
+        android:hint="mobile number"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/confirm_faculty_password"
+        app:layout_constraintStart_toStartOf="@+id/confirm_faculty_password"
+        app:layout_constraintTop_toBottomOf="@+id/confirm_faculty_password" />
+
+</android.support.constraint.ConstraintLayout>

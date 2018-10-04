@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <Spinner
+        android:id="@+id/practice_quiz_apinner"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="#008000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/student_practicequiz_no_internet_image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:src="@drawable/no_internet_icon"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/student_practicequiz_retry"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/student_practicequiz_retry"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="108dp"
+        android:text="Retry"
+        android:visibility="invisible"
+        android:background="#008000"
+        android:textColor="#ffffff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/student_practicequiz_no_internet_image"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/student_practicequiz_no_internet_image"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.wang.avi.AVLoadingIndicatorView
+        android:id="@+id/student_practicequiz_loader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:indicatorColor="@color/colorPrimary"
+        app:indicatorName="BallPulseIndicator"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/practice_quiz_card"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="88dp"
+        android:visibility="gone"
+        app:cardElevation="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <CheckBox
+                    android:id="@+id/practice_quiz_choice1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="30dp"
+                    android:buttonTint="@color/colorPrimary"
+                    android:text="CheckBox"
+                    android:textSize="15dp"
+                    app:layout_constraintStart_toStartOf="@+id/practice_quiz_question"
+                    app:layout_constraintTop_toBottomOf="@+id/practice_quiz_question" />
+
+                <CheckBox
+                    android:id="@+id/practice_quiz_choice2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="8dp"
+                    android:buttonTint="@color/colorPrimary"
+                    android:text="CheckBox"
+                    android:textSize="15dp"
+                    app:layout_constraintStart_toStartOf="@+id/practice_quiz_choice1"
+                    app:layout_constraintTop_toBottomOf="@+id/practice_quiz_choice1" />
+
+                <CheckBox
+                    android:id="@+id/practice_quiz_choice3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="8dp"
+                    android:buttonTint="@color/colorPrimary"
+                    android:text="CheckBox"
+                    android:textSize="15dp"
+                    app:layout_constraintStart_toStartOf="@+id/practice_quiz_choice2"
+                    app:layout_constraintTop_toBottomOf="@+id/practice_quiz_choice2" />
+
+                <CheckBox
+                    android:id="@+id/practice_quiz_choice4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="8dp"
+                    android:buttonTint="@color/colorPrimary"
+                    android:text="CheckBox"
+                    android:textSize="15dp"
+                    app:layout_constraintStart_toStartOf="@+id/practice_quiz_choice3"
+                    app:layout_constraintTop_toBottomOf="@+id/practice_quiz_choice3" />
+
+                <TextView
+                    android:id="@+id/practice_quiz_question"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="50dp"
+                    android:maxLines="10"
+                    android:text="TextView"
+                    android:textSize="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/practice_quiz_next"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="50dp"
+                    android:background="#008000"
+                    android:text="Next"
+                    android:textColor="#ffffff"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/practice_quiz_choice4" />
+            </android.support.constraint.ConstraintLayout>
+
+        </android.support.v4.widget.NestedScrollView>
+
+    </android.support.v7.widget.CardView>
+
+    <TextView
+        android:id="@+id/practice_correct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="correct"
+        android:textColor="@color/otpBlue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/practice_quiz_apinner" />
+
+    <TextView
+        android:id="@+id/practice_correct_answers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="0"
+        app:layout_constraintBottom_toBottomOf="@+id/practice_correct"
+        app:layout_constraintStart_toEndOf="@+id/practice_correct"
+        app:layout_constraintTop_toTopOf="@+id/practice_correct" />
+
+    <TextView
+        android:id="@+id/practice_attempted_questions_int"
+        android:layout_width="15dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="5"
+        app:layout_constraintBottom_toBottomOf="@+id/practice_correct_answers"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/practice_correct_answers" />
+
+    <TextView
+        android:id="@+id/practice_attempted"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:gravity="center"
+        android:textColor="@color/otpBlue"
+        android:text="Attempted Questions"
+        app:layout_constraintBottom_toBottomOf="@+id/practice_attempted_questions_int"
+        app:layout_constraintEnd_toStartOf="@+id/practice_attempted_questions_int"
+        app:layout_constraintTop_toTopOf="@+id/practice_attempted_questions_int" />
+
+</android.support.constraint.ConstraintLayout>

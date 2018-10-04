@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <corners android:topRightRadius="5dp" android:topLeftRadius="5dp">
+    </corners>
+
+    <padding android:top="10dp" android:left="5dp" android:right="5dp">
+
+    </padding>
+
+    <solid android:color="@color/otpBlue"
+        tools:targetApi="lollipop"></solid>
+</shape>

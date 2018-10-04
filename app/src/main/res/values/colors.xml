@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#f57c00</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="orange">#ffffff</color>
+    <color name="otpBlue">#03a9f4</color>
+    <color name="appcolor">#03a9f4</color>
+    <color name="attendencePresent">#008000</color>
+    <color name="attendenceAbsentColor">#ff0000</color>
+    <color name="attendenceColor">#ff0000</color>
+    <!--transperent-->
+    <color name="transperent">#00FFFFFF</color>
+    <color name="transperent80">#1AFFFFFF</color>
+    <color name="transperent50">#80FFFFFF</color>
+</resources>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.stepCone.sridatta.CollegeAssistant">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:largeHeap="true"
+        android:allowBackup="true"
+        android:icon="@drawable/launcher_icon_new_one"
+        android:label="College Assistant"
+        android:roundIcon="@drawable/ic_launcher_foreground"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".SplashScreen"
+            android:theme="@style/loginpageTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ChooserPage"
+            android:screenOrientation="portrait"
+            android:theme="@style/loginpageTheme" />
+        <activity
+            android:name=".MainActivity"
+            android:parentActivityName=".ChooserPage"
+            android:screenOrientation="portrait"
+            android:theme="@style/loginpageTheme" />
+        <activity
+            android:name=".OtpActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/loginpageTheme" />
+        <activity
+            android:name=".studentHome"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".FacultyHome" />
+        <activity
+            android:name=".faculty.questionActivity"
+            android:parentActivityName=".FacultyHome"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".faculty.AttendenceRegister"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".faculty.PostLinkActivity"
+            android:parentActivityName=".FacultyHome"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".faculty.getStudentProgress"
+            android:screenOrientation="portrait" />
+
+        <service android:name=".MyFirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name=".MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name=".student.StudentProfile"
+            android:parentActivityName=".studentHome"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".faculty.FacultyProfile"
+            android:parentActivityName=".FacultyHome"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".student.studentSubjectList"
+            android:parentActivityName=".student.StudentProfile"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".faculty.postMarks"
+            android:parentActivityName=".FacultyHome"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".faculty.postMArksToSection"
+            android:parentActivityName=".faculty.postMarks"
+            android:screenOrientation="portrait" />
+        <activity android:name=".faculty.select_sub" />
+        <activity android:name=".faculty.student_marks"></activity>
+    </application>
+
+</manifest>

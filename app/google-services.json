@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "553989657286",
+    "firebase_url": "https://loginpage-5f101.firebaseio.com",
+    "project_id": "loginpage-5f101",
+    "storage_bucket": "loginpage-5f101.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:553989657286:android:08febe2da4b2d05e",
+        "android_client_info": {
+          "package_name": "com.stepCone.sridatta.CollegeAssistant"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "553989657286-vbphiq5kbaepaouk0rfi1ctk09105gve.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.stepCone.sridatta.CollegeAssistant",
+            "certificate_hash": "a4e6d24910b32ebc044d765a2a6ad6af205311a8"
+          }
+        },
+        {
+          "client_id": "553989657286-r23g51vp85j87fggrlh7rsp79b59238m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDl-HqVtgegAkWUWA8MAy9CQ8_NjnoI-aY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "553989657286-r23g51vp85j87fggrlh7rsp79b59238m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

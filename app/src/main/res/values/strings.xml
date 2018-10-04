@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">College Assistant</string>
+    <string name="open"> Open</string>
+    <string name="close">Close</string>
+    <string name="title_activity_datta">datta</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_student_home">StudentHome</string>
+</resources>

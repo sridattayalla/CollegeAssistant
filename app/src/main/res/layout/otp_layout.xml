@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/signinshape"
+    tools:layout_editor_absoluteY="25dp">
+
+
+    <!--<TextView-->
+        <!--android:id="@+id/time"-->
+        <!--android:layout_width="64dp"-->
+        <!--android:layout_height="20dp"-->
+        <!--android:layout_marginEnd="28dp"-->
+        <!--android:layout_marginTop="32dp"-->
+        <!--android:gravity="right"-->
+        <!--android:text="TextView"-->
+        <!--android:textColor="#FF4900"-->
+        <!--android:textSize="15dp"-->
+        <!--app:layout_constraintEnd_toEndOf="parent"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/editText3" />-->
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="125dp"
+        android:background="@drawable/edittextshape"
+        android:ems="10"
+        android:hint="Enter Mobile Number"
+        android:inputType="number"
+        android:textSize="18dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/otp_toolbar" />
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/orange_otp_button"
+        android:text="Submit"
+        android:textAllCaps="false"
+        android:textSize="18dp"
+        android:textColor="#ffffff"
+        app:layout_constraintBottom_toBottomOf="@+id/editText3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/editText3"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <!--<TextView-->
+        <!--android:id="@+id/resend_otp"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:layout_marginStart="4dp"-->
+        <!--android:text="Resend otp"-->
+        <!--android:textColor="#FF4900"-->
+        <!--android:textSize="15dp"-->
+        <!--app:layout_constraintBottom_toBottomOf="@+id/time"-->
+        <!--app:layout_constraintStart_toStartOf="@+id/editText3"-->
+        <!--app:layout_constraintTop_toTopOf="@+id/time" />-->
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/otp_toolbar"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="@drawable/signin_actionbar"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</android.support.constraint.ConstraintLayout>

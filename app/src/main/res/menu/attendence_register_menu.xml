@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tool="http://schemas.android.com/apk/res-auto">
+    <!--<item android:title="Choose Section"-->
+        <!--android:id="@+id/choose_section"-->
+        <!--android:icon="@drawable/ic_menu_manage"-->
+        <!--tool:showAsAction="never"/>-->
+
+    <!--<item android:title="lock register"-->
+        <!--android:id="@+id/lock_register"-->
+        <!--android:icon="@drawable/ic_menu_slideshow"-->
+        <!--tool:showAsAction="never"/>-->
+
+    <item android:title="Submit"
+        android:icon="@drawable/ic_menu_send"
+        android:id="@+id/submit"
+        tool:showAsAction="always"/>
+
+</menu>
